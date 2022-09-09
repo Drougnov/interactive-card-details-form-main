@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+<body>
+  <div class="container">
+    <div class="card-container">
+      <picture>
+        <source media="(min-width: 650px)" srcset="./images/bg-main-desktop.png">
+        <img src="./images/bg-main-mobile.png" alt="">
+      </picture>
+      <div class="card card-back">
+        <span class="cvc">000</span>
+      </div>
+      <div class="card card-front">
+        <img src="./images/card-logo.svg" alt="logo">
+        <section class="output-section">
+          <h1>0000 0000 0000 0000</h1>
+          <div>
+            <p>Jane Appleseed</p>
+            <p>00/00</p>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="input-section">
+      <form>
+        <label for="name">Cardholder Name</label>
+        <input type="text" placeholder="e.g. Jane Appleseed" id="name" name="name">
+        <label for="number">Card Number</label>
+        <input type="number" placeholder="e.g. 1234 5678 9123 0000" id="number" name="number">
+        <label id='date'>Exp. Date (MM/YY)</label>
+        <input type='number' placeholder="MM" id='month' name="month" aria-labelledby='date'/>
+        <input type='number' placeholder="YY" id='year' name="year" aria-labelledby='date'/>
+        <label for="cvc">CVC</label>
+        <input type="number" placeholder="e.g. 123" id="cvc" name="cvc">
+        <button type="submit">Confirm</button>
+      </form>
+      <section class="modal">
+        <img src="./images/icon-complete.svg" alt="">
+        <h2>Thank you!</h2>
+        <p>We've added your card details</p>
+        <button type="button">Continue</button>
+      </section>
+      <footer class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend Mentor</a>. 
+        Coded by <a href="https://www.facebook.com/ANT1D0t35" target="_blank" rel="noopener">Your Name Here</a>.
+      </footer>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
