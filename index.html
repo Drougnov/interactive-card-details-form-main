@@ -18,7 +18,7 @@
         <span class="cvc">000</span>
       </div>
       <div class="card card-front">
-        <img src="./images/card-logo.svg" alt="logo">
+        <img src="./images/card-logo.svg" alt="logo" class="logo">
         <section class="output-section">
           <h1>0000 0000 0000 0000</h1>
           <div>
@@ -30,15 +30,29 @@
     </div>
     <div class="input-section">
       <form>
-        <label for="name">Cardholder Name</label>
-        <input type="text" placeholder="e.g. Jane Appleseed" id="name" name="name">
-        <label for="number">Card Number</label>
-        <input type="number" placeholder="e.g. 1234 5678 9123 0000" id="number" name="number">
-        <label id='date'>Exp. Date (MM/YY)</label>
-        <input type='number' placeholder="MM" id='month' name="month" aria-labelledby='date'/>
-        <input type='number' placeholder="YY" id='year' name="year" aria-labelledby='date'/>
-        <label for="cvc">CVC</label>
-        <input type="number" placeholder="e.g. 123" id="cvc" name="cvc">
+        <div class="input-field">
+          <label for="name">Cardholder Name</label>
+          <input type="text" placeholder="e.g. Jane Appleseed" id="name" name="name">
+          <p class="error empty">Can't be blank</p>
+          <p class="error invalid">Wrong format, letters only</p>
+        </div>
+        <div class="input-field">
+          <label for="number">Card Number</label>
+          <input type="text" placeholder="e.g. 1234 5678 9123 0000" id="number" name="number">
+          <p class="error empty">Can't be blank</p>
+          <p class="error invalid">Wrong format, numbers only</p>
+        </div>
+        <div class="input-field">
+          <label id='date'>Exp. Date (MM/YY)</label>
+          <input type='number' placeholder="MM" id='month' name="month" aria-labelledby='date'/>
+          <input type='number' placeholder="YY" id='year' name="year" aria-labelledby='date'/>
+          <p class="error empty">Can't be blank</p>
+        </div>
+        <div class="input-field">
+          <label for="cvc">CVC</label>
+          <input type="number" placeholder="e.g. 123" id="cvc" name="cvc">
+          <p class="error empty">Can't be blank</p>
+        </div>
         <button type="submit">Confirm</button>
       </form>
       <section class="modal">
@@ -49,7 +63,7 @@
       </section>
       <footer class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend Mentor</a>. 
-        Coded by <a href="https://www.facebook.com/ANT1D0t35" target="_blank" rel="noopener">Your Name Here</a>.
+        Coded by <a href="https://www.facebook.com/ANT1D0t35" target="_blank" rel="noopener">Rocky</a>.
       </footer>
     </div>
   </div>

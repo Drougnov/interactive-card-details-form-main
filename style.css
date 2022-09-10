@@ -13,9 +13,11 @@
 }
 body{
     min-height: 100vh;
+    color: var(--light-grayish-violet);
     font-size: 1.125rem;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 500;
+    letter-spacing: 1px;
 }
 h1,h2,p,span{
     font-weight: 500;
@@ -32,9 +34,12 @@ h1,h2,p,span{
     height: 240px
 }
 .card-container .card{
-    width: 300px;
-    height: 150px;
+    width: 285px;
+    height: 160px;
     position: absolute;
+    border-radius: .3rem;
+    text-transform: uppercase;
+    z-index: 100;
 }
 .card-container .card-back{
     top: 2rem;
@@ -44,8 +49,130 @@ h1,h2,p,span{
 }
 .card-back .cvc{
     position: absolute;
-    top: 4.25rem;
+    top: 4.5rem;
     right: 2.5rem;
-    color: var(--light-grayish-violet);
+    color: var(--white);
     font-size: .625rem;
+}
+.card-container .card-front{
+    top: 7.6rem;
+    left: 1rem;
+    background: url(./images/bg-card-front.png) no-repeat;
+    background-size: 100% 100%;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card-front .logo{
+    width: 50px;
+    height: auto;
+}
+.card-front .output-section{
+    color: var(--white);
+}
+.output-section h1{
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+.output-section div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .625rem;
+}
+.container .input-section{
+    padding: 5rem 1.5rem 2.5rem 1.5rem;
+    position: relative;
+}
+.input-section form{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+form .input-field label{
+    color: var(--very-dark-violet);
+    font-size: .85rem;
+    text-transform: uppercase;
+}
+.input-field input{
+    width: 100%;
+    height: 2.5rem;
+    padding-left: 1rem;
+    border: 1px solid var(--light-grayish-violet);
+    border-radius: .5rem;
+    display: block;
+    margin: .5rem 0 .3rem 0;
+}
+::placeholder{
+    color: var(--light-grayish-violet);
+    font-size: 1.125rem;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.input-field .error{
+    color: var(--red);
+    font-size: .7rem;
+    letter-spacing: normal;
+    display: none;
+}
+/*.input-section form label{
+    color: var(--very-dark-violet);
+    font-size: .85rem;
+    text-transform: uppercase;
+}
+form .form-flex{
+    display: flex;
+    align-items: flex-end;
+    gap: .5rem;
+}
+.form-flex > * {
+    width: 100%;
+}
+.form-flex .date-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: .5rem;
+}
+.date-container label{
+    grid-column: 1/-1;
+    margin-bottom: -.5rem;
+}
+form input{
+    display: block;
+    margin: .25rem 0 1rem 0;
+    width: 100%;
+    height: 2.5rem;
+    padding-left: 1rem;
+    border: 1px solid var(--light-grayish-violet);
+    border-radius: .5rem;
+}
+ */
+form button{
+    width: 100%;
+    height: 3rem;
+    color: var(--white);
+    background: var(--very-dark-violet);
+    font-size: 1.125rem;
+    font-weight: 500;
+    font-family: 'Space Grotesk', sans-serif;
+    border: none;
+    border-radius: .5rem;
+    margin-top: 1rem;
+}
+.modal{
+    position: absolute;
+    display: none;
+}
+footer{
+    color: var(--very-dark-violet);
+    font-size: .8rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+footer a{
+    color: var(--very-dark-violet);
+}
+footer a:hover{
+    text-decoration: none;
 }
