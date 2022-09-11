@@ -13,7 +13,7 @@
 }
 body{
     min-height: 100vh;
-    color: var(--light-grayish-violet);
+    color: var(--dark-grayish-violet);
     font-size: 1.125rem;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 500;
@@ -28,10 +28,11 @@ h1,h2,p,span{
 }
 .container .card-container{
     position: relative;
+    height: 240px;
 }
 .card-container img{
     width: 100%;
-    height: 240px
+    height: 100%;
 }
 .card-container .card{
     width: 285px;
@@ -47,7 +48,7 @@ h1,h2,p,span{
     background: url(./images/bg-card-back.png) no-repeat;
     background-size: 100% 100%;
 }
-.card-back .cvc{
+.card-back .cvc-output{
     position: absolute;
     top: 4.5rem;
     right: 2.5rem;
@@ -82,7 +83,8 @@ h1,h2,p,span{
     font-size: .625rem;
 }
 .container .input-section{
-    padding: 5rem 1.5rem 2.5rem 1.5rem;
+    padding:1.5rem;
+    padding-top: 5rem;
     position: relative;
 }
 .input-section form{
@@ -92,13 +94,14 @@ h1,h2,p,span{
 }
 form .input-field label{
     color: var(--very-dark-violet);
-    font-size: .85rem;
+    font-size: .8rem;
     text-transform: uppercase;
 }
 .input-field input{
     width: 100%;
     height: 2.5rem;
     padding-left: 1rem;
+    outline: none;
     border: 1px solid var(--light-grayish-violet);
     border-radius: .5rem;
     display: block;
@@ -109,46 +112,42 @@ form .input-field label{
     font-size: 1.125rem;
     font-family: 'Space Grotesk', sans-serif;
 }
+.input-field.error-empty input,.input-field.error-invalid input{
+    border: 1px solid var(--red);
+}
+.input-field input:focus{
+    border: 1px solid transparent;
+    background: 
+        linear-gradient(to right, white, white), 
+        linear-gradient(to left, hsl(278, 94%, 30%) , hsl(249, 99%, 64%)); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
 .input-field .error{
     color: var(--red);
     font-size: .7rem;
     letter-spacing: normal;
     display: none;
 }
-/*.input-section form label{
-    color: var(--very-dark-violet);
-    font-size: .85rem;
-    text-transform: uppercase;
-}
-form .form-flex{
-    display: flex;
-    align-items: flex-end;
-    gap: .5rem;
-}
-.form-flex > * {
-    width: 100%;
-}
-.form-flex .date-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: .5rem;
-}
-.date-container label{
-    grid-column: 1/-1;
-    margin-bottom: -.5rem;
-}
-form input{
+.input-field.error-empty .empty{
     display: block;
-    margin: .25rem 0 1rem 0;
-    width: 100%;
-    height: 2.5rem;
-    padding-left: 1rem;
-    border: 1px solid var(--light-grayish-violet);
-    border-radius: .5rem;
 }
- */
-form button{
+.input-field.error-invalid .invalid{
+    display: block;
+}
+form .flex-row{
+    display: flex;
+    align-items: flex-start;
+    gap: .5rem;
+}
+.flex-row > *{
+    width: 100%;
+}
+.date-container .date-input{
+    display: flex;
+    gap: .5rem;
+}
+.btn{
     width: 100%;
     height: 3rem;
     color: var(--white);
@@ -162,7 +161,28 @@ form button{
 }
 .modal{
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1.5rem;
+}
+.modal img{
+    margin-bottom: 2rem;
+}
+.modal h2{
+    color: var(--very-dark-violet);
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+.modal p{
+    margin: 1rem 0 2rem 0;
 }
 footer{
     color: var(--very-dark-violet);
@@ -175,4 +195,54 @@ footer a{
 }
 footer a:hover{
     text-decoration: none;
+}
+
+@media(min-width: 1020px){
+    .container{
+        height: 100vh;
+        flex-direction: row;
+    }
+    .container .card-container{
+        width: 33.33%;
+        height: 100%;
+    }
+    .card-container .card{
+        transform: scale(1.1);
+    }
+    .card-container .card-back{
+        top: 21rem;
+        left: 8rem;
+    }
+    .card-container .card-front{
+        top: 8rem;
+        left: 4rem;
+    }
+    .container .input-section{
+        width: 66.67%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .input-section form{
+        max-width: 425px;
+    }
+    .modal>*{
+        max-width: 425px;
+    }
+}
+
+@media(min-width: 1280px){
+    .card-container .card{
+        transform: scale(1.3);
+    }
+    .card-container .card-back{
+        top: 25rem;
+        left: 18rem;
+    }
+    .card-container .card-front{
+        top: 10rem;
+        left: 13rem;
+    }
 }
