@@ -1,10 +1,24 @@
 const form = document.querySelector('form');
 const inputs = document.querySelectorAll('input');
+const modal = document.querySelector('.modal');
+const modalClose = document.querySelector('.close');
 
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
     inputs.forEach(input=>{
-        if(input.classList.contains('date')){  // for the month and year field
+        if(input.classList.contains('name-input')){   // for the name input
+            if(input.value === ''){
+                input.parentElement.classList.add('error-empty');
+                input.parentElement.classList.remove('error-invalid');
+            }else if(input.value !== '' && input.value.match(/^[0-9]+$/) !== null){
+                input.parentElement.classList.remove('error-empty');
+                input.parentElement.classList.add('error-invalid');
+            }
+            else{
+                input.parentElement.classList.remove('error-empty');
+                input.parentElement.classList.remove('error-invalid');
+            }
+        }else if(input.classList.contains('date')){  // for the month and year inputs
             if(input.value === ''){
                 input.parentElement.parentElement.classList.add('error-empty');
                 input.parentElement.parentElement.classList.remove('error-invalid');
@@ -27,9 +41,21 @@ form.addEventListener('submit',(e)=>{
                 input.parentElement.classList.remove('error-invalid');
             }
         }
+
+        if(input.parentElement.classList.contains('error-empty')    // check if `input-field` has error classes
+        || input.parentElement.classList.contains('error-invalid')
+        ||input.parentElement.parentElement.classList.contains('error-invalid')
+        || input.parentElement.parentElement.classList.contains('error-empty')){
+            modal.style.display = 'none';
+        }else{
+            modal.style.display = "flex";
+        }
     })
 })
 
+modalClose.addEventListener('click',()=>{
+    modal.style.display = "none";
+})
 
 //input value handlers
 
