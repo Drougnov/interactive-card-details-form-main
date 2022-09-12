@@ -158,6 +158,10 @@ form .flex-row{
     border: none;
     border-radius: .5rem;
     margin-top: 1rem;
+    cursor: pointer;
+}
+.btn:hover{
+    background: var(--dark-grayish-violet);
 }
 .modal{
     position: absolute;
