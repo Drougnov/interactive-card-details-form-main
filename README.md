@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL: ](https://your-solution-url.com)
-- [Live Site URL: ](https://drougnov.github.io/interactive-card-details-form-main/)
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [https://drougnov.github.io/interactive-card-details-form-main/](https://drougnov.github.io/interactive-card-details-form-main/)
 
 ## My process
 
