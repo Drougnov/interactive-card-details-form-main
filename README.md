@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Frontend Mentor solution link](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw/hub/interactive-card-details-form-solution-responsive-mobile-first-3xdHcHqjQJ)
 - Live Site URL: [https://drougnov.github.io/interactive-card-details-form-main/](https://drougnov.github.io/interactive-card-details-form-main/)
 
 ## My process
