@@ -1,5 +1,6 @@
 const form = document.querySelector('form');
 const inputs = document.querySelectorAll('input');
+const inputFields = document.querySelectorAll('.input-field');
 const modal = document.querySelector('.modal');
 const modalClose = document.querySelector('.close');
 
@@ -13,16 +14,12 @@ form.addEventListener('submit',(e)=>{
         }else{
             containsOtherInput(input)
         }
-
-        if(input.parentElement.classList.contains('error-empty')    // check if `input-field` has error classes
-        || input.parentElement.classList.contains('error-invalid')
-        ||input.parentElement.parentElement.classList.contains('error-invalid')
-        || input.parentElement.parentElement.classList.contains('error-empty')){
-            modal.style.display = 'none';
-        }else{
-            modal.style.display = "flex";
-        }
     })
+    if((document.getElementsByClassName('error-empty').length) > 0 || (document.getElementsByClassName('error-invalid').length) > 0){
+        modal.style.display = "none";
+    }else{
+        modal.style.display = "flex";
+    }
 })
 
 const containsNameInput = function(input){

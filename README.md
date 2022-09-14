@@ -64,7 +64,7 @@ In this challange I learned:
 
 ### Continued development
 
-I'm not satisfied with the form validation. Right now, the modal is getting showed just with cvc input. I need to learn how to do things only after all inputs in the form are valid.
+I need to learn how to handle form more easily and proficiently.
 
 ### Useful resources
 
