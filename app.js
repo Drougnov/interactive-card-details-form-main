@@ -6,6 +6,7 @@ const modalClose = document.querySelector('.close');
 
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
+    modal.style.display = "flex";
     inputs.forEach(input=>{
         if(input.classList.contains('name-input')){
             containsNameInput(input)
@@ -14,19 +15,28 @@ form.addEventListener('submit',(e)=>{
         }else{
             containsOtherInput(input)
         }
+
+        if (input.parentElement.classList.contains('error-empty') ||
+            input.parentElement.classList.contains('error-invalid') ||
+            input.parentElement.parentElement.classList.contains('error-invalid') ||
+            input.parentElement.parentElement.classList.contains('error-empty')) {
+            modal.style.display = 'none';
+        }
     })
-    if((document.getElementsByClassName('error-empty').length) > 0 || (document.getElementsByClassName('error-invalid').length) > 0){
-        modal.style.display = "none";
-    }else{
-        modal.style.display = "flex";
-    }
+
+    //This approach works but upper one is better
+    // if((document.getElementsByClassName('error-empty').length) > 0 || (document.getElementsByClassName('error-invalid').length) > 0){
+    //     modal.style.display = "none";
+    // }else{
+    //     modal.style.display = "flex";
+    // }
 })
 
 const containsNameInput = function(input){
     if(input.value === ''){
         input.parentElement.classList.add('error-empty');
         input.parentElement.classList.remove('error-invalid');
-    }else if(input.value !== '' && input.value.match(/^[0-9]+$/) !== null){
+    }else if(input.value !== '' && input.value.match(/^[0-9]+$/) !== null){  // wil return null if value has number
         input.parentElement.classList.remove('error-empty');
         input.parentElement.classList.add('error-invalid');
     }
